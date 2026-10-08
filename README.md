@@ -2,6 +2,12 @@
 
 This repository serves the account homepage at https://amirlotfifar1994-dot.github.io/.
 
+The homepage automatically opens the published resume at
+https://amirlotfifar1994-dot.github.io/Resume/ using an HTML meta refresh. A visible
+resume link is provided as a fallback. The resume content is maintained in the
+`amirlotfifar1994-dot/Resume` repository, so its updates appear at the destination
+without copying files into this repository.
+
 KAVICO is published separately at https://amirlotfifar1994-dot.github.io/kavico/ from
 the `amirlotfifar1994-dot/kavico` repository and its GitHub Actions Pages workflow.
 Do not copy the KAVICO build to this repository's root.
