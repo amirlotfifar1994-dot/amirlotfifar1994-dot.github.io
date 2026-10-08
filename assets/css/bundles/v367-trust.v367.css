@@ -1,0 +1,29 @@
+/* KAVICO v367 — evidence boundaries, decision gates, B2B trust path */
+body.v367-trust{--v367-line:color-mix(in srgb,var(--border,rgba(255,255,255,.14)) 80%,transparent);--v367-soft:color-mix(in srgb,var(--surface,#111827) 86%,transparent);--v367-soft2:color-mix(in srgb,var(--surface-2,var(--surface,#111827)) 82%,transparent);--v367-accent:var(--v359-gold,var(--accent,#c9a86a));}
+body.v367-trust .v367-trust{padding-block:clamp(2.1rem,4.6vw,4.8rem);scroll-margin-top:150px}
+body.v367-trust .v367-shell{border:1px solid var(--v367-line);border-radius:clamp(22px,3vw,36px);padding:clamp(1.15rem,2.6vw,2rem);background:linear-gradient(145deg,var(--v367-soft2),color-mix(in srgb,var(--surface,#111827) 68%,transparent));box-shadow:0 26px 70px rgba(0,0,0,.10)}
+body.v367-trust .v367-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.48fr);gap:1.2rem;align-items:end;margin-bottom:1.05rem}
+body.v367-trust .v367-eyebrow{display:inline-flex;margin-bottom:.42rem;font-size:.75rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase;color:var(--v367-accent)}
+html[lang="fa"] body.v367-trust .v367-eyebrow{letter-spacing:0}
+body.v367-trust .v367-head h2{margin:0;font-size:clamp(1.35rem,2.6vw,2.05rem);line-height:1.38}
+body.v367-trust .v367-head p{margin:0;color:var(--muted,#aeb7c3);line-height:1.82}
+body.v367-trust .v367-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+body.v367-trust .v367-card{position:relative;min-height:205px;padding:1rem;border:1px solid var(--v367-line);border-radius:18px;background:color-mix(in srgb,var(--surface,#111827) 84%,transparent);overflow:hidden}
+body.v367-trust .v367-card::after{content:"";position:absolute;inline-size:100px;block-size:100px;border-radius:50%;inset-block-end:-50px;inset-inline-end:-44px;background:color-mix(in srgb,var(--v367-accent) 8%,transparent);pointer-events:none}
+body.v367-trust .v367-num{display:inline-grid;place-items:center;inline-size:34px;block-size:34px;border-radius:10px;margin-bottom:.72rem;background:color-mix(in srgb,var(--v367-accent) 13%,transparent);color:var(--v367-accent);font-weight:950}
+body.v367-trust .v367-card h3{margin:.05rem 0 .52rem;font-size:1rem;line-height:1.5}
+body.v367-trust .v367-card p{margin:0;color:var(--muted,#aeb7c3);font-size:.91rem;line-height:1.78}
+body.v367-trust .v367-note{margin-top:.85rem;padding:.8rem .9rem;border-inline-start:3px solid color-mix(in srgb,var(--v367-accent) 58%,transparent);border-radius:10px;background:color-mix(in srgb,var(--v367-accent) 6%,transparent);color:var(--muted,#aeb7c3);line-height:1.78;font-size:.9rem}
+body.v367-trust .v367-path{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--v367-line)}
+body.v367-trust .v367-path__label{display:block;margin-bottom:.65rem;font-size:.78rem;font-weight:900;color:var(--v367-accent)}
+body.v367-trust .v367-path__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+body.v367-trust .v367-path__link{display:flex;gap:.7rem;align-items:flex-start;padding:.82rem .88rem;border:1px solid var(--v367-line);border-radius:15px;color:inherit;text-decoration:none;background:color-mix(in srgb,var(--surface,#111827) 76%,transparent);transition:transform .18s ease,border-color .18s ease}
+body.v367-trust .v367-path__link:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--v367-accent) 45%,var(--v367-line))}
+body.v367-trust .v367-path__link b{display:grid;place-items:center;flex:0 0 30px;inline-size:30px;block-size:30px;border-radius:9px;background:color-mix(in srgb,var(--v367-accent) 12%,transparent);color:var(--v367-accent)}
+body.v367-trust .v367-path__link strong{display:block;font-size:.9rem;margin-bottom:.15rem}
+body.v367-trust .v367-path__link span{display:block;color:var(--muted,#aeb7c3);font-size:.8rem;line-height:1.6}
+body.v367-trust .v367-faq-triage{grid-template-columns:repeat(4,minmax(0,1fr))}
+body.v367-trust .v367-faq-triage .v367-card{min-height:180px}
+@media(max-width:900px){body.v367-trust .v367-head{grid-template-columns:1fr}body.v367-trust .v367-grid,body.v367-trust .v367-faq-triage{grid-template-columns:1fr 1fr}body.v367-trust .v367-path__grid{grid-template-columns:1fr}}
+@media(max-width:620px){body.v367-trust .v367-grid,body.v367-trust .v367-faq-triage{grid-template-columns:1fr}body.v367-trust .v367-card{min-height:0}}
+@media(prefers-reduced-motion:reduce){body.v367-trust .v367-path__link{transition:none}}

@@ -1,0 +1,39 @@
+{
+  "name": "Kavian Coating | PVD and Surface Finishing",
+  "short_name": "Kavian Coating",
+  "start_url": "/en/?utm_source=pwa",
+  "id": "/en/",
+  "scope": "/en/",
+  "lang": "en",
+  "dir": "ltr",
+  "display": "standalone",
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "description": "PVD coating, nickel-chrome plating, polishing, and surface-finishing services for project-specific industrial and decorative applications."
+}

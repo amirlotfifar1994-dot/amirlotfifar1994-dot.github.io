@@ -1,0 +1,558 @@
+/* Kavico v353 Nebula runtime. */
+:root[data-theme="nebula"],
+body[data-theme="nebula"] {
+  
+  --nebula-bg-deep: #0a0118;
+  --nebula-bg-space: #1a0b2e;
+  --nebula-bg-void: #16213e;
+  
+  
+  --nebula-surface: rgba(37, 20, 66, 0.65);
+  --nebula-card: rgba(45, 25, 85, 0.45);
+  --nebula-glass: rgba(60, 35, 110, 0.25);
+  
+  
+  --nebula-purple: #a78bfa;      
+  --nebula-violet: #8b5cf6;      
+  --nebula-violet-h: 258;
+  --nebula-violet-s: 90%;
+  --nebula-violet-l: 66%;
+  --nebula-violet-hsl: hsl(var(--nebula-violet-h), var(--nebula-violet-s), var(--nebula-violet-l));
+  --nebula-violet-light: hsl(var(--nebula-violet-h), var(--nebula-violet-s), 76%);
+  --nebula-violet-dark: hsl(var(--nebula-violet-h), var(--nebula-violet-s), 56%);
+
+  --nebula-pink: #f472b6;        
+  --nebula-pink-bright: #ec4899; 
+  --nebula-cyan: #22d3ee;        
+  --nebula-blue: #3b82f6;        
+  --nebula-amber: #fbbf24;       
+  
+  
+  --nebula-gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --nebula-gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --nebula-gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --nebula-gradient-cosmic: linear-gradient(135deg, 
+    #667eea 0%, 
+    #764ba2 25%, 
+    #f093fb 50%, 
+    #8b5cf6 75%, 
+    #a78bfa 100%);
+  
+  
+  --nebula-gradient-subtle: linear-gradient(180deg, rgba(167, 139, 250, 0.10) 0%, rgba(236, 72, 153, 0.05) 100%);
+  --nebula-gradient-radial: radial-gradient(circle at 30% 30%, rgba(167, 139, 250, 0.20), transparent 70%);
+
+  
+  
+  --nebula-text-primary: #f3f4f6;
+  --nebula-text-secondary: #d1d5db;
+  --nebula-text-muted: #9ca3af;
+  --nebula-text-glow: rgba(167, 139, 250, 0.9);
+  
+  
+  --nebula-border: rgba(167, 139, 250, 0.2);
+  --nebula-border-bright: rgba(167, 139, 250, 0.4);
+  --nebula-shadow-sm: 0 2px 8px rgba(139, 92, 246, 0.15);
+  --nebula-shadow-md: 0 8px 24px rgba(139, 92, 246, 0.25);
+  --nebula-shadow-lg: 0 16px 48px rgba(139, 92, 246, 0.35);
+  --nebula-shadow-glow: 0 0 20px rgba(167, 139, 250, 0.4);
+  
+  
+  --nebula-blur-glass: blur(12px);
+  --nebula-blur-heavy: blur(20px);
+  
+  
+  --nebula-transition-fast: 0.2s;
+  --nebula-transition-normal: 0.35s;
+  --nebula-transition-slow: 0.6s;
+
+  
+  color-scheme: dark;
+
+  
+  --slider-bg: rgba(10, 1, 24, 0.38);
+}:root[data-theme="nebula"] body,
+body[data-theme="nebula"] {
+  background: var(--nebula-bg-deep);
+  color: var(--nebula-text-primary);
+  position: relative;
+  overflow-x: hidden;
+}:root[data-theme="nebula"] body::before,
+body[data-theme="nebula"]::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.22), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(236, 72, 153, 0.14), transparent),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(34, 211, 238, 0.10), transparent);
+  animation: nebula-aurora 20s ease-in-out infinite;
+}:root[data-theme="nebula"] body::after,
+body[data-theme="nebula"]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 90%, white, transparent);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  animation: nebula-star-drift 200s linear infinite, nebula-twinkle 12s ease-in-out infinite alternate;
+  opacity: 0.4;
+}:root[data-theme="nebula"] .appHeader,
+body[data-theme="nebula"] .appHeader {
+  background: var(--nebula-glass);
+  backdrop-filter: var(--nebula-blur-glass);
+  border-bottom: 1px solid var(--nebula-border);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}:root[data-theme="nebula"] .panel,
+:root[data-theme="nebula"] .card,
+body[data-theme="nebula"] .panel,
+body[data-theme="nebula"] .card {
+  background: var(--nebula-card);
+  backdrop-filter: var(--nebula-blur-glass);
+  border: 1px solid var(--nebula-border);
+  box-shadow: var(--nebula-shadow-md);
+  transition: all var(--nebula-transition-normal) ease;
+}:root[data-theme="nebula"] .lesson-card,
+body[data-theme="nebula"] .lesson-card {
+  background: var(--nebula-surface);
+  backdrop-filter: var(--nebula-blur-glass);
+  border: 1px solid var(--nebula-border);
+  box-shadow: var(--nebula-shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--nebula-transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+}:root[data-theme="nebula"] .lesson-card:hover,
+body[data-theme="nebula"] .lesson-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--nebula-border-bright);
+  box-shadow: 
+    var(--nebula-shadow-lg),
+    var(--nebula-shadow-glow);
+}:root[data-theme="nebula"] .lesson-card::before,
+body[data-theme="nebula"] .lesson-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(167, 139, 250, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}:root[data-theme="nebula"] .lesson-card:hover::before,
+body[data-theme="nebula"] .lesson-card:hover::before {
+  left: 100%;
+}:root[data-theme="nebula"] .btn,
+:root[data-theme="nebula"] .icon-button,
+body[data-theme="nebula"] .btn,
+body[data-theme="nebula"] .icon-button {
+  background: var(--nebula-surface);
+  border: 1px solid var(--nebula-border);
+  color: var(--nebula-text-primary);
+  backdrop-filter: var(--nebula-blur-glass);
+  transition: all var(--nebula-transition-fast) ease;
+  position: relative;
+  overflow: hidden;
+}:root[data-theme="nebula"] .btn:hover,
+:root[data-theme="nebula"] .icon-button:hover,
+body[data-theme="nebula"] .btn:hover,
+body[data-theme="nebula"] .icon-button:hover {
+  background: var(--nebula-card);
+  border-color: var(--nebula-border-bright);
+  transform: translateY(-2px);
+  box-shadow: var(--nebula-shadow-glow);
+}:root[data-theme="nebula"] .btnPrimary,
+:root[data-theme="nebula"] .btn-primary,
+body[data-theme="nebula"] .btnPrimary,
+body[data-theme="nebula"] .btn-primary {
+  background: var(--nebula-gradient-cosmic);
+  border: none;
+  color: white;
+  font-weight: 700;
+  box-shadow: var(--nebula-shadow-md);
+}:root[data-theme="nebula"] .btnPrimary:hover,
+:root[data-theme="nebula"] .btn-primary:hover,
+body[data-theme="nebula"] .btnPrimary:hover,
+body[data-theme="nebula"] .btn-primary:hover {
+  box-shadow: 
+    var(--nebula-shadow-lg),
+    0 0 30px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px) scale(1.05);
+}:root[data-theme="nebula"] .btn::after,
+body[data-theme="nebula"] .btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(167, 139, 250, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}:root[data-theme="nebula"] .btn:active::after,
+body[data-theme="nebula"] .btn:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}:root[data-theme="nebula"] .badge,
+:root[data-theme="nebula"] .chip,
+body[data-theme="nebula"] .badge,
+body[data-theme="nebula"] .chip {
+  background: var(--nebula-glass);
+  backdrop-filter: var(--nebula-blur-glass);
+  border: 1px solid var(--nebula-border);
+  color: var(--nebula-text-primary);
+  transition: all var(--nebula-transition-fast) ease;
+}:root[data-theme="nebula"] .chip:hover,
+body[data-theme="nebula"] .chip:hover {
+  background: var(--nebula-card);
+  border-color: var(--nebula-purple);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+}:root[data-theme="nebula"] .chip.active,
+body[data-theme="nebula"] .chip.active {
+  background: var(--nebula-gradient-1);
+  border-color: var(--nebula-violet);
+  color: white;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}:root[data-theme="nebula"] .input,
+:root[data-theme="nebula"] .textarea,
+:root[data-theme="nebula"] input[type="text"],
+:root[data-theme="nebula"] input[type="search"],
+body[data-theme="nebula"] .input,
+body[data-theme="nebula"] .textarea,
+body[data-theme="nebula"] input[type="text"],
+body[data-theme="nebula"] input[type="search"] {
+  background: var(--nebula-card);
+  backdrop-filter: var(--nebula-blur-glass);
+  border: 1px solid var(--nebula-border);
+  color: var(--nebula-text-primary);
+  transition: all var(--nebula-transition-normal) ease;
+}:root[data-theme="nebula"] .input:focus,
+:root[data-theme="nebula"] input:focus,
+body[data-theme="nebula"] .input:focus,
+body[data-theme="nebula"] input:focus {
+  border-color: var(--nebula-purple);
+  box-shadow: 
+    0 0 0 3px rgba(167, 139, 250, 0.2),
+    0 0 20px rgba(139, 92, 246, 0.22);
+  outline: none;
+}:root[data-theme="nebula"] ::placeholder,
+body[data-theme="nebula"] ::placeholder {
+  color: var(--nebula-text-muted);
+}:root[data-theme="nebula"] .muted,
+body[data-theme="nebula"] .muted {
+  color: var(--nebula-text-muted);
+}:root[data-theme="nebula"] h1,
+:root[data-theme="nebula"] h2,
+:root[data-theme="nebula"] h3,
+body[data-theme="nebula"] h1,
+body[data-theme="nebula"] h2,
+body[data-theme="nebula"] h3 {
+  color: var(--nebula-text-primary);
+  text-shadow: 0 2px 8px rgba(139, 92, 246, 0.22);
+}:root[data-theme="nebula"] .h1,
+:root[data-theme="nebula"] .title,
+body[data-theme="nebula"] .h1,
+body[data-theme="nebula"] .title {
+  background: var(--nebula-gradient-cosmic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nebula-text-glow 3s ease-in-out infinite;
+}:root[data-theme="nebula"] .lesson-card img,
+body[data-theme="nebula"] .lesson-card img {
+  transition: transform var(--nebula-transition-normal) ease;
+}:root[data-theme="nebula"] .lesson-card:hover img,
+body[data-theme="nebula"] .lesson-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1) saturate(1.2);
+}@keyframes nebula-aurora {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  33% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translateY(10px) scale(0.95);
+    opacity: 0.85;
+  }
+}@keyframes nebula-twinkle {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}@keyframes nebula-float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}@keyframes nebula-text-glow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 10px rgba(167, 139, 250, 0.5));
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(167, 139, 250, 0.8));
+  }
+}@keyframes nebula-rotate-gradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}@keyframes nebula-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(167, 139, 250, 0.6);
+  }
+}@keyframes nebula-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}:root[data-theme="nebula"] .lesson-card,
+body[data-theme="nebula"] .lesson-card {
+  animation: nebula-fadeIn 0.6s ease-out backwards;
+}:root[data-theme="nebula"] .lesson-card:nth-child(1),
+body[data-theme="nebula"] .lesson-card:nth-child(1) { animation-delay: 0.05s; }:root[data-theme="nebula"] .lesson-card:nth-child(2),
+body[data-theme="nebula"] .lesson-card:nth-child(2) { animation-delay: 0.1s; }:root[data-theme="nebula"] .lesson-card:nth-child(3),
+body[data-theme="nebula"] .lesson-card:nth-child(3) { animation-delay: 0.15s; }:root[data-theme="nebula"] .lesson-card:nth-child(4),
+body[data-theme="nebula"] .lesson-card:nth-child(4) { animation-delay: 0.2s; }:root[data-theme="nebula"] .lesson-card:nth-child(5),
+body[data-theme="nebula"] .lesson-card:nth-child(5) { animation-delay: 0.25s; }@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="nebula"] *,
+  body[data-theme="nebula"] * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}@media (forced-colors: active) {
+  :root[data-theme="nebula"],
+  body[data-theme="nebula"] {
+    --nebula-border: rgba(167, 139, 250, 0.5);
+    --nebula-text-primary: #ffffff;
+  }
+}@keyframes nebula-star-drift{
+  0%{ background-position: 0% 0%; }
+  100%{ background-position: 200% 120%; }
+}
+
+[data-theme="nebula"]{
+  
+  --bg: var(--bg-page);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --text-muted: var(--text-secondary);
+  --surface-1: var(--bg-surface-1);
+  --surface-2: var(--bg-surface-2);
+  --surface-3: var(--bg-surface-3);
+  --header-bg: var(--bg-surface-glass);
+  --border-1: var(--border-subtle);
+  --border-2: var(--border-moderate);
+  --card-bg: var(--bg-surface-2);
+  --card-border: var(--border-moderate);
+
+  
+  --bg-page: var(--nebula-bg-deep);
+  --bg-page-overlay: rgba(10, 1, 24, 0.92);
+
+  --bg-surface-1: rgba(45, 25, 85, 0.42);
+  --bg-surface-2: rgba(37, 20, 66, 0.62);
+  --bg-surface-3: rgba(60, 35, 110, 0.25);
+  --bg-surface-glass: rgba(60, 35, 110, 0.22);
+
+  --text-primary: var(--nebula-text-primary);
+  --text-secondary: var(--nebula-text-secondary);
+  --text-tertiary: var(--nebula-text-muted);
+  --text-inverse: #0b1020;
+  --text-disabled: rgba(209, 213, 219, 0.45);
+
+  --border-subtle: rgba(167, 139, 250, 0.18);
+  --border-moderate: rgba(167, 139, 250, 0.26);
+  --border-strong: rgba(167, 139, 250, 0.42);
+  --border-emphasis: rgba(236, 72, 153, 0.55);
+
+  --color-primary: var(--nebula-violet);
+  --color-primary-hover: var(--nebula-purple);
+  --color-primary-active: #7c3aed; 
+
+  --shadow-xs: 0 1px 2px rgba(139, 92, 246, 0.12);
+  --shadow-sm: var(--nebula-shadow-sm);
+  --shadow-md: var(--nebula-shadow-md);
+  --shadow-lg: var(--nebula-shadow-lg);
+  --shadow-xl: 0 20px 60px rgba(139, 92, 246, 0.38);
+
+  --shadow-primary: 0 10px 30px rgba(139, 92, 246, 0.25);
+  --shadow-primary-lg: 0 18px 54px rgba(139, 92, 246, 0.35);
+
+  --glass-bg: rgba(60, 35, 110, 0.18);
+  --glass-border: rgba(167, 139, 250, 0.20);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(0,0,0,0.35);
+
+  --state-hover-bg: rgba(167, 139, 250, 0.10);
+  --state-active-bg: rgba(236, 72, 153, 0.14);
+  --state-disabled-bg: rgba(60, 35, 110, 0.18);
+  --state-focus-ring: 0 0 0 4px rgba(167, 139, 250, 0.22);
+}[data-theme="nebula"] .appHeader{ z-index: 10050; }[data-theme="nebula"] .theme-toggle .theme-icon{ display:none !important; }[data-theme="nebula"] .theme-toggle{
+  position: relative;
+  color: var(--nebula-text-primary);
+}[data-theme="nebula"] .theme-toggle::before{
+  content: "🌌";
+  font-size: 20px;
+  line-height: 1;
+}[data-theme="nebula"] .shopWrap,
+[data-theme="nebula"] .productWrap,
+[data-theme="nebula"] .shopGrid,
+[data-theme="nebula"] .product-grid{
+  background: transparent;
+}html[data-enh="v2"][data-theme="nebula"]{
+  --kui-surface: rgba(45, 25, 85, 0.38);
+  --kui-surface-2: rgba(37, 20, 66, 0.56);
+  --kui-border: rgba(167, 139, 250, 0.18);
+  --kui-text: var(--text-primary);
+  --kui-muted: var(--text-secondary);
+  --kui-glow-accent: 0 0 26px rgba(167, 139, 250, 0.38);
+}html[data-enh="v2"][data-theme="nebula"] .kui-glass{
+  background: rgba(60, 35, 110, 0.22);
+  border-color: rgba(167, 139, 250, 0.20);
+}[data-theme="nebula"] .kui-glass{
+  background: rgba(12, 8, 26, 0.58);
+  border-color: rgba(167, 139, 250, 0.18);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}[data-theme="nebula"] .kui-glass.kui-hover:hover{
+  background: rgba(12, 8, 26, 0.66);
+  border-color: rgba(167, 139, 250, 0.28);
+}[data-theme="nebula"]{
+  --accent: var(--color-primary);
+  --accent-light: #c4b5fd;
+}:root[data-theme="nebula"],
+html[data-theme="nebula"]{
+  
+  --bg-surface-0: rgba(10, 1, 24, 0.92);
+  --bg-surface-1: rgba(37, 20, 66, 0.72);
+  --bg-surface-2: rgba(45, 25, 85, 0.58);
+  --bg-surface-3: rgba(60, 35, 110, 0.40);
+
+  --surface-0: var(--bg-surface-0);
+  --surface-1: var(--bg-surface-1);
+  --surface-2: var(--bg-surface-2);
+  --surface-3: var(--bg-surface-3);
+
+  --border: rgba(167, 139, 250, 0.18);
+
+  
+  --border-1: rgba(167, 139, 250, 0.12);
+  --border-2: rgba(167, 139, 250, 0.22);
+  --card-bg: var(--bg-surface-2);
+  --card-border: var(--border-2);
+  --header-bg: rgba(10, 1, 24, 0.66);
+  --nav-hover-bg: rgba(167, 139, 250, 0.10);
+  --nav-hover-border: rgba(167, 139, 250, 0.20);
+  --shadow-sm: 0 8px 22px rgba(0,0,0,0.28);
+  --shadow-md: 0 18px 40px rgba(0,0,0,0.35);
+  --shadow-lg: 0 28px 70px rgba(0,0,0,0.45);
+
+  
+  --ui-surface-1: rgba(37, 20, 66, 0.78);
+  --ui-surface-2: rgba(45, 25, 85, 0.62);
+  --ui-border: rgba(167, 139, 250, 0.18);
+  --ui-border-w: 1px;
+  --ui-radius-xl: 18px;
+
+  
+  --kui-surface: rgba(45, 25, 85, 0.38);
+  --kui-surface-2: rgba(37, 20, 66, 0.56);
+  --kui-border: rgba(167, 139, 250, 0.18);
+  --kui-text: var(--text-primary);
+  --kui-muted: var(--text-secondary);
+  --kui-glow-accent: 0 0 26px rgba(167, 139, 250, 0.38);
+
+  color-scheme: dark;
+}[data-theme="nebula"] .kui-glass,
+[data-theme="nebula"] .kui-panel,
+[data-theme="nebula"] .kui-card{
+  background: rgba(37, 20, 66, 0.68) !important;
+  border-color: rgba(167, 139, 250, 0.18) !important;
+}html[data-theme="nebula"] .hero::before{
+  background: radial-gradient(800px 320px at 75% 0%, rgba(167,139,250,0.10), transparent 65%),
+              radial-gradient(700px 380px at 15% 100%, rgba(124,58,237,0.12), transparent 70%) !important;
+}html[data-theme="nebula"] .hero::after{
+  background: linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.45)) !important;
+}html[data-theme="nebula"] .callout-amber{
+  background: rgba(179, 107, 0, 0.10) !important;
+  border-color: rgba(255, 177, 66, 0.24) !important;
+  color: rgba(241, 245, 249, 0.92) !important;
+}html[data-theme="nebula"] .callout-amber .callout-desc,
+html[data-theme="nebula"] .callout-amber p{ color: rgba(241, 245, 249, 0.82) !important; }html[data-theme="nebula"] .comparePreview::after,
+html[data-theme="nebula"] .compareOverlay{
+  background-image:
+    radial-gradient(1000px 480px at 15% 0%, rgba(167,139,250,0.10), transparent 60%),
+    radial-gradient(1000px 520px at 85% 100%, rgba(124,58,237,0.12), transparent 65%) !important;
+}html[data-theme="nebula"]{
+  --ui-surface-1: rgba(16, 10, 34, 0.62);
+  --ui-surface-2: rgba(22, 13, 46, 0.72);
+  --ui-border: rgba(167, 139, 250, 0.18);
+  --ui-border-strong: rgba(167, 139, 250, 0.30);
+  --ui-focus: rgba(167, 139, 250, 0.35);
+
+  
+  --kui-glass-alpha: 0.34;
+  --kui-glass-blur: 14px;
+  --kui-glass-saturation: 140%;
+  --kui-border: rgba(167, 139, 250, 0.18);
+}html[data-theme="nebula"] .enh-glass,
+html[data-theme="nebula"] .kui-glass{
+  background: rgba(14, 9, 30, 0.62) !important;
+  border-color: rgba(167, 139, 250, 0.20) !important;
+}html[data-theme="nebula"] .compareTableWrap,
+html[data-theme="nebula"] .comparePickers,
+html[data-theme="nebula"] .articlesDots{
+  background: rgba(14, 9, 30, 0.58) !important;
+  border-color: rgba(167, 139, 250, 0.20) !important;
+}html[data-theme="nebula"] select,
+html[data-theme="nebula"] input,
+html[data-theme="nebula"] textarea{
+  background: rgba(10, 6, 24, 0.70) !important;
+  border-color: rgba(167, 139, 250, 0.22) !important;
+  color: var(--text-primary) !important;
+}html[data-theme="nebula"] option{ color: #0b1020; }

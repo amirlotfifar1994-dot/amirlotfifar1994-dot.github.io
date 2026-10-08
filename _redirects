@@ -1,0 +1,94 @@
+# Auto-generated redirects: canonicalize legacy *.html URLs to folder URLs
+# Netlify syntax: from  to  status
+
+# v417 full-project safety boundary: never publish private source/control-plane files
+/kavico_v414_admin/*  /404.html  404!
+/scripts/*  /404.html  404!
+/FULL_PROJECT_*  /404.html  404!
+/SOURCE_PROVENANCE.json  /404.html  404!
+/START_HERE.md  /404.html  404!
+/QA_REPORT_V415.md  /404.html  404!
+/VERSION  /404.html  404!
+/package.json  /404.html  404!
+
+# v361 production hard-blocks: dormant commerce/admin/order surfaces
+/shop/*  /404.html  404!
+/admin/*  /404.html  404!
+/api/orders  /404.html  404!
+/api/orders/*  /404.html  404!
+/api/admin/orders  /404.html  404!
+/api/admin/orders/*  /404.html  404!
+/.netlify/functions/*  /404.html  404!
+
+/blog/other-coating-methods-phoretic-anodizing-thermal-spray/other-coating-methods-phoretic-anodizing-thermal-spray.html  /blog/other-coating-methods-phoretic-anodizing-thermal-spray/  301!
+/blog/electrophoretic-ecoat-phoretic-guide/electrophoretic-ecoat-phoretic-guide.html  /blog/electrophoretic-ecoat-phoretic-guide/  301!
+/blog/electrostatic-powder-coating-guide/electrostatic-powder-coating-guide.html  /blog/electrostatic-powder-coating-guide/  301!
+/blog/traditional-plating-nickel-chrome/traditional-plating-nickel-chrome.html  /blog/traditional-plating-nickel-chrome/  301!
+/blog/anodizing-aluminum-luxury-finish/anodizing-aluminum-luxury-finish.html  /blog/anodizing-aluminum-luxury-finish/  301!
+/blog/conductive-vs-insulative-for-pvd/conductive-vs-insulative-for-pvd.html  /blog/conductive-vs-insulative-for-pvd/  301!
+/blog/plating-defects-peeling-blisters/plating-defects-peeling-blisters.html  /blog/plating-defects-peeling-blisters/  301!
+/blog/pvd-door-handles-luxury-finish/pvd-door-handles-luxury-finish.html  /blog/pvd-door-handles-luxury-finish/  301!
+/blog/pvd-defects-streaks-pinhole/pvd-defects-streaks-pinhole.html  /blog/pvd-defects-streaks-pinhole/  301!
+/blog/decorative-vs-hard-chrome/decorative-vs-hard-chrome.html  /blog/decorative-vs-hard-chrome/  301!
+/blog/pvd-color-consistency-qc/pvd-color-consistency-qc.html  /blog/pvd-color-consistency-qc/  301!
+/blog/pvd-fingerprint-cleaning/pvd-fingerprint-cleaning.html  /blog/pvd-fingerprint-cleaning/  301!
+/services/nickel-chrome-plating/nickel-chrome-plating.html  /services/nickel-chrome-plating/  301!
+/blog/mirror-vs-satin-polish/mirror-vs-satin-polish.html  /blog/mirror-vs-satin-polish/  301!
+/blog/nickel-chrome-on-zamak/nickel-chrome-on-zamak.html  /blog/nickel-chrome-on-zamak/  301!
+/blog/pvd-on-zinc-galvanized/pvd-on-zinc-galvanized.html  /blog/pvd-on-zinc-galvanized/  301!
+/guides/nickel-chrome-plating/nickel-chrome-plating.html  /guides/nickel-chrome-plating/  301!
+/blog/architectural-coating/architectural-coating.html  /blog/architectural-coating/  301!
+/blog/polishing-brass-parts/polishing-brass-parts.html  /blog/polishing-brass-parts/  301!
+/blog/polishing-before-pvd/polishing-before-pvd.html  /blog/polishing-before-pvd/  301!
+/blog/pvd-color-durability/pvd-color-durability.html  /blog/pvd-color-durability/  301!
+/blog/pvd-on-glass-crystal/pvd-on-glass-crystal.html  /blog/pvd-on-glass-crystal/  301!
+/blog/surface-preparation/surface-preparation.html  /blog/surface-preparation/  301!
+/blog/pvd-on-abs-plastic/pvd-on-abs-plastic.html  /blog/pvd-on-abs-plastic/  301!
+/compare/pvd-vs-anodizing/pvd-vs-anodizing.html  /compare/pvd-vs-anodizing/  301!
+/blog/decor-color-match/decor-color-match.html  /blog/decor-color-match/  301!
+/blog/pvd-on-pp-plastic/pvd-on-pp-plastic.html  /blog/pvd-on-pp-plastic/  301!
+/services/decorative-pvd/decorative-pvd.html  /services/decorative-pvd/  301!
+/compare/pvd-vs-plating/pvd-vs-plating.html  /compare/pvd-vs-plating/  301!
+/blog/pvd-quote-guide/pvd-quote-guide.html  /blog/pvd-quote-guide/  301!
+/tehran/decorative-pvd/decorative-pvd.html  /tehran/decorative-pvd/  301!
+/compare/pvd-vs-powder/pvd-vs-powder.html  /compare/pvd-vs-powder/  301!
+/karaj/decorative-pvd/decorative-pvd.html  /karaj/decorative-pvd/  301!
+/blog/matte-vs-gloss/matte-vs-gloss.html  /blog/matte-vs-gloss/  301!
+/blog/pvd-vs-ceramic/pvd-vs-ceramic.html  /blog/pvd-vs-ceramic/  301!
+/blog/quality-tests/quality-tests.html  /blog/quality-tests/  301!
+/services/pvd-coating/pvd-coating.html  /services/pvd-coating/  301!
+/services/pvd-faucets/pvd-faucets.html  /services/pvd-faucets/  301!
+/guides/pvd-coating/pvd-coating.html  /guides/pvd-coating/  301!
+/tehran/pvd-coating/pvd-coating.html  /tehran/pvd-coating/  301!
+/tehran/pvd-faucets/pvd-faucets.html  /tehran/pvd-faucets/  301!
+/karaj/pvd-coating/pvd-coating.html  /karaj/pvd-coating/  301!
+/karaj/pvd-faucets/pvd-faucets.html  /karaj/pvd-faucets/  301!
+/blog/pvd-coating/pvd-coating.html  /blog/pvd-coating/  301!
+/blog/pvd-faucets/pvd-faucets.html  /blog/pvd-faucets/  301!
+/services/polishing/polishing.html  /services/polishing/  301!
+/blog/decorative/decorative.html  /blog/decorative/  301!
+/blog/industrial/industrial.html  /blog/industrial/  301!
+/blog/pvd-colors/pvd-colors.html  /blog/pvd-colors/  301!
+/guides/polishing/polishing.html  /guides/polishing/  301!
+/blog/pvd-care/pvd-care.html  /blog/pvd-care/  301!
+/tools/pricing/pricing.html  /tools/pricing/  301!
+/portfolio/portfolio.html  /portfolio/  301!
+/services/services.html  /services/  301!
+/compare/compare.html  /compare/  301!
+/contact/contact.html  /contact/  301!
+/process/process.html  /process/  301!
+/quality/quality.html  /quality/  301!
+/guides/guides.html  /guides/  301!
+/tehran/tehran.html  /tehran/  301!
+/about/about.html  /about/  301!
+/guide/guide.html  /guide/  301!
+/karaj/karaj.html  /karaj/  301!
+/tools/tools.html  /tools/  301!
+/blog/blog.html  /blog/  301!
+/faq/faq.html  /faq/  301!
+/hub/hub.html  /hub/  301!
+/offline/offline.html  /offline/  301!
+
+/kavico_v429_admin/*  /404.html  404
+
+/kavico_v434_admin/* /404.html 404

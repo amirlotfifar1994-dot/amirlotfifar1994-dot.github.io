@@ -1,0 +1,129 @@
+{
+  "mapping_version": "kavico.lead-lifecycle.v1",
+  "description": "CRM/admin lifecycle map for KAVICO leads. The public site emits only submitted + queued. All subsequent state transitions are owned by the future admin/CRM layer.",
+  "privacy": "Queue, priority and SLA policy are derived only from non-PII project context. No customer name, phone, email, city or free-text details are part of the admin export payload.",
+  "public_emission": {
+    "lifecycle_status": "submitted",
+    "followup_state": "queued"
+  },
+  "assignment_queue_by_lane": {
+    "discovery": "lead-discovery",
+    "repeat-production": "repeat-production",
+    "sample-validation": "sample-validation",
+    "production-quote": "commercial-estimation",
+    "engineering-review": "technical-engineering",
+    "technical-feasibility": "technical-engineering",
+    "technical-review": "technical-engineering"
+  },
+  "sla_policy_by_priority": {
+    "p1": {
+      "key": "priority-review",
+      "note": "Internal priority class only. No public response-time promise is encoded."
+    },
+    "p2": {
+      "key": "standard-review",
+      "note": "Internal standard review class. Target duration is configured by the future admin system."
+    },
+    "p3": {
+      "key": "discovery-review",
+      "note": "Internal discovery class for incomplete/early-stage project context."
+    }
+  },
+  "next_action_rules": [
+    {
+      "when": {
+        "readiness": "discovery"
+      },
+      "next_action": "request-project-context"
+    },
+    {
+      "when": {
+        "lane": "repeat-production"
+      },
+      "next_action": "review-repeat-production"
+    },
+    {
+      "when": {
+        "lane": "sample-validation"
+      },
+      "next_action": "review-sample-requirements"
+    },
+    {
+      "when": {
+        "lane": "production-quote"
+      },
+      "next_action": "prepare-commercial-review"
+    },
+    {
+      "when": {
+        "lane": [
+          "engineering-review",
+          "technical-feasibility",
+          "technical-review"
+        ]
+      },
+      "next_action": "review-technical-feasibility"
+    },
+    {
+      "when": {
+        "lane": "discovery"
+      },
+      "next_action": "triage-brief"
+    }
+  ],
+  "lifecycle_statuses": [
+    "submitted",
+    "triaged",
+    "awaiting-information",
+    "technical-review",
+    "commercial-review",
+    "sample-validation",
+    "repeat-production-review",
+    "closed-won",
+    "closed-lost",
+    "closed-no-fit"
+  ],
+  "allowed_transitions": {
+    "submitted": [
+      "triaged",
+      "awaiting-information"
+    ],
+    "triaged": [
+      "awaiting-information",
+      "technical-review",
+      "commercial-review",
+      "sample-validation",
+      "repeat-production-review",
+      "closed-no-fit"
+    ],
+    "awaiting-information": [
+      "triaged",
+      "closed-no-fit"
+    ],
+    "technical-review": [
+      "awaiting-information",
+      "commercial-review",
+      "sample-validation",
+      "closed-no-fit"
+    ],
+    "commercial-review": [
+      "awaiting-information",
+      "closed-won",
+      "closed-lost"
+    ],
+    "sample-validation": [
+      "awaiting-information",
+      "technical-review",
+      "commercial-review",
+      "closed-no-fit"
+    ],
+    "repeat-production-review": [
+      "awaiting-information",
+      "commercial-review",
+      "closed-no-fit"
+    ],
+    "closed-won": [],
+    "closed-lost": [],
+    "closed-no-fit": []
+  }
+}

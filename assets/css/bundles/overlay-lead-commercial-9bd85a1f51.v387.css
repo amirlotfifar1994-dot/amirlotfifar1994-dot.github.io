@@ -1,0 +1,33 @@
+/* KAVICO v371 — lead quality, source-aware brief and post-submit follow-up */
+.v371-origin-context{margin:14px 0 4px;padding:12px 14px;border:1px solid color-mix(in srgb,var(--accent,#c6a15b) 28%,transparent);border-radius:14px;background:color-mix(in srgb,var(--surface,#fff) 92%,var(--accent,#c6a15b) 8%);display:grid;gap:4px}
+.v371-origin-context[hidden],.v371-submit-gate[hidden],.v371-followup[hidden]{display:none!important}
+.v371-origin-context__eyebrow{font-size:.76rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.72}
+.v371-origin-context p{margin:0;line-height:1.75}
+.v371-submit-gate{grid-column:1/-1;margin:4px 0 2px;padding:16px;border:1px solid color-mix(in srgb,#b87924 38%,transparent);border-radius:16px;background:color-mix(in srgb,#fff6df 72%,var(--surface,#fff) 28%)}
+[data-theme="dark"] .v371-submit-gate{background:color-mix(in srgb,#6f4b18 20%,var(--surface,#111) 80%)}
+.v371-submit-gate h3{margin:0 0 6px;font-size:1rem}.v371-submit-gate p{margin:0;line-height:1.75}.v371-submit-gate__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.v371-submit-gate__actions .btn{min-height:42px}
+.v371-quality-chip{display:inline-flex;align-items:center;gap:6px;width:max-content;max-width:100%;padding:5px 9px;border-radius:999px;font-size:.78rem;font-weight:800;background:color-mix(in srgb,var(--accent,#c6a15b) 12%,var(--surface,#fff) 88%);border:1px solid color-mix(in srgb,var(--accent,#c6a15b) 24%,transparent)}
+.v371-followup{margin-top:18px;padding:18px;border-radius:18px;border:1px solid color-mix(in srgb,var(--accent,#c6a15b) 22%,transparent);background:linear-gradient(135deg,color-mix(in srgb,var(--surface,#fff) 94%,var(--accent,#c6a15b) 6%),var(--surface,#fff))}
+.v371-followup h2{margin:6px 0 8px}.v371-followup p{margin:0;line-height:1.8}.v371-followup ul{margin:12px 0 0;padding-inline-start:1.25rem;display:grid;gap:6px}
+@media(max-width:680px){.v371-submit-gate__actions{display:grid}.v371-submit-gate__actions .btn{width:100%}.v371-origin-context,.v371-submit-gate,.v371-followup{border-radius:14px}}
+
+/* Kavico v372 — final commercial trust layer */
+.v372-commercial{margin-block:clamp(2rem,5vw,4.5rem)}
+.v372-commercial__shell{border:1px solid color-mix(in srgb,var(--accent,#c59a55) 28%,var(--border,#d9d9d9));border-radius:24px;padding:clamp(1.2rem,3vw,2rem);background:linear-gradient(145deg,color-mix(in srgb,var(--surface,#fff) 94%,var(--accent,#c59a55) 6%),var(--surface,#fff));box-shadow:0 18px 54px rgba(0,0,0,.06)}
+.v372-commercial__head{display:grid;gap:.55rem;max-width:780px}
+.v372-commercial__kicker{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,#9f7335)}
+.v372-commercial__head h2{margin:0;font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.35}
+.v372-commercial__head p{margin:0;color:var(--muted,#6a6a6a);line-height:1.9}
+.v372-commercial__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1.2rem}
+.v372-commercial__item{display:grid;gap:.35rem;padding:1rem;border:1px solid var(--border,#ddd);border-radius:16px;background:color-mix(in srgb,var(--surface,#fff) 97%,transparent)}
+.v372-commercial__item span{font-size:.74rem;font-weight:800;color:var(--accent,#9f7335)}
+.v372-commercial__item strong{font-size:.98rem;line-height:1.65}
+.v372-commercial__item p{margin:0;color:var(--muted,#6a6a6a);font-size:.9rem;line-height:1.75}
+.v372-commercial__actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.1rem}
+.v372-commercial__actions a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.v372-contact-facts .v372-commercial__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.v372-contact-facts address{font-style:normal}
+.v372-contact-facts a{overflow-wrap:anywhere}
+.v372-thanks-handoff .v372-commercial__shell{background:color-mix(in srgb,var(--surface,#fff) 96%,var(--accent,#c59a55) 4%)}
+@media(max-width:760px){.v372-commercial__grid,.v372-contact-facts .v372-commercial__grid{grid-template-columns:1fr}.v372-commercial__shell{border-radius:18px;padding:1rem}.v372-commercial__actions{display:grid}.v372-commercial__actions a{width:100%}}

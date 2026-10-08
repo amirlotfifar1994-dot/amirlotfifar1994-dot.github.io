@@ -1,0 +1,77 @@
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'; style-src-attr 'none'; script-src 'self' 'sha256-qDEfxglHGecIXyI3ij+MmNU1TNUsMXGK0rAUBOZ2M5k='; script-src-attr 'none'; font-src 'self' data:; connect-src 'self'; media-src 'self'; frame-src https://www.google.com https://maps.google.com; worker-src 'self'; manifest-src 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), autoplay=(), browsing-topics=(), camera=(), display-capture=(), encrypted-media=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  Origin-Agent-Cluster: ?1
+  X-Permitted-Cross-Domain-Policies: none
+  X-DNS-Prefetch-Control: off
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sw.js
+  Cache-Control: no-cache
+
+/site.webmanifest
+  Cache-Control: public, max-age=0, must-revalidate
+
+/manifest.webmanifest
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/css/bundles/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/js/bundles/*
+  Cache-Control: public, max-age=31536000, immutable
+
+
+/assets/contracts/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+
+/favicon.ico
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/favicon-16x16.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/favicon-32x32.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/logo.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/logo.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/og-image.jpg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/twitter-image.jpg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/contact/thanks/*
+  Cache-Control: no-store, max-age=0
+  X-Robots-Tag: noindex, nofollow, noarchive

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kavico.ir/assets/contracts/lead-admin-export.v1.schema.json",
+  "title": "KAVICO Lead Admin Export v1",
+  "description": "Non-PII initial admin/CRM handoff derived from the public lead conversion event. It emits only the initial lifecycle state; later transitions belong to the future admin/CRM system.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "event_name",
+    "source_contract_version",
+    "mapping_version",
+    "event_id",
+    "lead_reference",
+    "occurred_at",
+    "lifecycle_status",
+    "followup_state",
+    "assignment_queue",
+    "sla_policy_key",
+    "next_action",
+    "readiness",
+    "priority",
+    "lane",
+    "route",
+    "service",
+    "stage",
+    "qualification_score",
+    "source_group",
+    "preferred_response",
+    "export_basis"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "kavico.lead-admin-export.v1"
+    },
+    "event_name": {
+      "const": "lead_submitted"
+    },
+    "source_contract_version": {
+      "const": "kavico.lead-conversion.v1"
+    },
+    "mapping_version": {
+      "const": "kavico.lead-lifecycle.v1"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^evt_[A-Za-z0-9-]{20,80}$"
+    },
+    "lead_reference": {
+      "type": "string",
+      "pattern": "^KVC-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lifecycle_status": {
+      "const": "submitted"
+    },
+    "followup_state": {
+      "const": "queued"
+    },
+    "assignment_queue": {
+      "enum": [
+        "lead-discovery",
+        "repeat-production",
+        "sample-validation",
+        "commercial-estimation",
+        "technical-engineering"
+      ]
+    },
+    "sla_policy_key": {
+      "enum": [
+        "priority-review",
+        "standard-review",
+        "discovery-review"
+      ]
+    },
+    "next_action": {
+      "enum": [
+        "triage-brief",
+        "request-project-context",
+        "review-repeat-production",
+        "review-sample-requirements",
+        "prepare-commercial-review",
+        "review-technical-feasibility"
+      ]
+    },
+    "readiness": {
+      "enum": [
+        "ready",
+        "reviewable",
+        "discovery"
+      ]
+    },
+    "priority": {
+      "enum": [
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    "lane": {
+      "enum": [
+        "discovery",
+        "repeat-production",
+        "sample-validation",
+        "production-quote",
+        "engineering-review",
+        "technical-feasibility",
+        "technical-review"
+      ]
+    },
+    "route": {
+      "enum": [
+        "service-discovery",
+        "repeat-production",
+        "sample-validation",
+        "production-quote",
+        "engineering-review",
+        "technical-feasibility"
+      ]
+    },
+    "service": {
+      "enum": [
+        "unsure",
+        "pvd-industrial",
+        "pvd-decorative",
+        "pvd-faucets",
+        "nickel-chrome",
+        "polishing"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "evaluation",
+        "prototype",
+        "quote",
+        "repeat"
+      ]
+    },
+    "qualification_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 200
+    },
+    "source_group": {
+      "enum": [
+        "followup",
+        "service",
+        "article",
+        "guide",
+        "compare",
+        "pricing",
+        "portfolio",
+        "local",
+        "general"
+      ]
+    },
+    "preferred_response": {
+      "enum": [
+        "phone",
+        "whatsapp",
+        "email"
+      ]
+    },
+    "export_basis": {
+      "const": "lead-conversion-v1+project-context-v398+admin-routing-v399"
+    }
+  }
+}

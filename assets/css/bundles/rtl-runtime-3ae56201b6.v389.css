@@ -1,0 +1,30 @@
+@font-face{font-family:"Vazirmatn";font-style:normal;font-weight:400;font-display:swap;src:url("../../fonts/vazirmatn/Vazirmatn-Regular-fa-190691b3d7.v389.woff2") format("woff2")}@font-face{font-family:"Vazirmatn";font-style:normal;font-weight:500;font-display:swap;src:url("../../fonts/vazirmatn/Vazirmatn-Medium-fa-56890d733f.v389.woff2") format("woff2")}@font-face{font-family:"Vazirmatn";font-style:normal;font-weight:600;font-display:swap;src:url("../../fonts/vazirmatn/Vazirmatn-SemiBold-fa-0e82e829df.v389.woff2") format("woff2")}@font-face{font-family:"Vazirmatn";font-style:normal;font-weight:700;font-display:swap;src:url("../../fonts/vazirmatn/Vazirmatn-Bold-fa-497262e287.v389.woff2") format("woff2")}@font-face{font-family:"Vazirmatn";font-style:normal;font-weight:800;font-display:swap;src:url("../../fonts/vazirmatn/Vazirmatn-ExtraBold-fa-f66bfaabd4.v389.woff2") format("woff2")}/* Kavico v353 RTL runtime. */
+html[dir="rtl"] .page-blog .posts-grid .card-body,
+html[dir="rtl"] .page-hub .posts-grid .card-body{
+  text-align: right;
+}html[dir="rtl"] #navMenu{left:1rem;right:1rem}html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6{
+  letter-spacing: 0 !important;
+  line-height: 1.22;
+  text-rendering: optimizeLegibility;
+}html[dir="rtl"] button,
+html[dir="rtl"] input,
+html[dir="rtl"] select,
+html[dir="rtl"] textarea{
+  font-family: inherit;
+}html[dir="rtl"] .ltr,
+html[dir="rtl"] code,
+html[dir="rtl"] pre,
+html[dir="rtl"] .num,
+html[dir="rtl"] .sku{
+  direction: ltr;
+  unicode-bidi: plaintext;
+}html[dir="rtl"] .page-home #hero .hero-content{
+    text-align: right !important;
+  }html[dir="rtl"] .page-home #hero .hero-actions{
+    justify-content: flex-start !important;
+  }

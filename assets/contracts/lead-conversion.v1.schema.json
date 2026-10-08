@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kavico.ir/assets/contracts/lead-conversion.v1.schema.json",
+  "title": "KAVICO Lead Conversion Event v1",
+  "description": "Non-PII event contract emitted when the public Project Brief is submitted. Personal form fields are intentionally outside this event payload.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "event_name",
+    "event_id",
+    "lead_reference",
+    "occurred_at",
+    "locale",
+    "service",
+    "stage",
+    "route",
+    "readiness",
+    "priority",
+    "lane",
+    "qualification_basis",
+    "qualification_score",
+    "source_group",
+    "source_prefilled",
+    "preferred_response"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "kavico.lead-conversion.v1"
+    },
+    "event_name": {
+      "const": "project_brief_submitted"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^evt_[A-Za-z0-9-]{20,80}$"
+    },
+    "lead_reference": {
+      "type": "string",
+      "pattern": "^KVC-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "locale": {
+      "enum": [
+        "fa",
+        "en"
+      ]
+    },
+    "service": {
+      "enum": [
+        "unsure",
+        "pvd-industrial",
+        "pvd-decorative",
+        "pvd-faucets",
+        "nickel-chrome",
+        "polishing"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "evaluation",
+        "prototype",
+        "quote",
+        "repeat"
+      ]
+    },
+    "route": {
+      "enum": [
+        "service-discovery",
+        "repeat-production",
+        "sample-validation",
+        "production-quote",
+        "engineering-review",
+        "technical-feasibility"
+      ]
+    },
+    "readiness": {
+      "enum": [
+        "ready",
+        "reviewable",
+        "discovery"
+      ]
+    },
+    "priority": {
+      "enum": [
+        "p1",
+        "p2",
+        "p3"
+      ]
+    },
+    "lane": {
+      "enum": [
+        "discovery",
+        "repeat-production",
+        "sample-validation",
+        "production-quote",
+        "engineering-review",
+        "technical-feasibility",
+        "technical-review"
+      ]
+    },
+    "qualification_basis": {
+      "const": "project-context-v398"
+    },
+    "qualification_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 200
+    },
+    "source_group": {
+      "enum": [
+        "followup",
+        "service",
+        "article",
+        "guide",
+        "compare",
+        "pricing",
+        "portfolio",
+        "local",
+        "general"
+      ]
+    },
+    "source_prefilled": {
+      "type": "boolean"
+    },
+    "preferred_response": {
+      "enum": [
+        "phone",
+        "whatsapp",
+        "email"
+      ]
+    }
+  }
+}
